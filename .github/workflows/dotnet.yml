@@ -24,7 +24,7 @@ jobs:
     - name: Testes com Cobertura de Código
       run: dotnet test ProjetoPilhaTests/ProjetoPilhaTests.csproj --collect "XPlat Code Coverage" --logger "trx;LogFileName=test_results.trx" --results-directory ./ProjetoPilhaTests/TestResults --verbosity detailed
 
-    - name: Listar Conteúdo do Diretório de Resultados
+    - name: Listar Conteúdo do Diretório de Resultados (Cobertura)
       run: ls -R ./ProjetoPilhaTests/TestResults
 
     - name: Mostrar Resultados
@@ -37,7 +37,7 @@ jobs:
       run: dotnet tool install -g dotnet-reportgenerator-globaltool
 
     - name: Converter Cobertura para HTML
-      run: reportgenerator "-reports:./ProjetoPilhaTests/TestResults/coverage.cobertura.xml" "-targetdir:./ProjetoPilhaTests/TestResults/HTML" -reporttypes:Html
+      run: reportgenerator "-reports:./ProjetoPilhaTests/TestResults/**/*.cobertura.xml" "-targetdir:./ProjetoPilhaTests/TestResults/HTML" -reporttypes:Html
 
     - name: Upload do Relatório HTML
       uses: actions/upload-artifact@v4
