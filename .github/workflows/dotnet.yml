@@ -21,8 +21,8 @@ jobs:
     - name: Restaurar Dependências
       run: dotnet restore
 
-    - name: Testes
-      run: dotnet test ProjetoPilhaTests/ProjetoPilhaTests.csproj --logger "trx;LogFileName=test_results.trx" --results-directory ./ProjetoPilhaTests/TestResults --verbosity detailed
+    - name: Testes com Cobertura de Código
+      run: dotnet test ProjetoPilhaTests/ProjetoPilhaTests.csproj --collect "XPlat Code Coverage" --logger "trx;LogFileName=test_results.trx" --results-directory ./ProjetoPilhaTests/TestResults --verbosity detailed
 
     - name: Listar Conteúdo do Diretório de Resultados
       run: ls -R ./ProjetoPilhaTests/TestResults
@@ -36,8 +36,8 @@ jobs:
     - name: Instalar ReportGenerator
       run: dotnet tool install -g dotnet-reportgenerator-globaltool
 
-    - name: Converter TRX para HTML
-      run: reportgenerator "-reports:./ProjetoPilhaTests/TestResults/test_results.trx" "-targetdir:./ProjetoPilhaTests/TestResults/HTML" -reporttypes:Html
+    - name: Converter Cobertura para HTML
+      run: reportgenerator "-reports:./ProjetoPilhaTests/TestResults/coverage.cobertura.xml" "-targetdir:./ProjetoPilhaTests/TestResults/HTML" -reporttypes:Html
 
     - name: Upload do Relatório HTML
       uses: actions/upload-artifact@v4
