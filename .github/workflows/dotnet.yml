@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  nunit-test-workflow:
+  testes:
     runs-on: ubuntu-latest
 
     steps:
