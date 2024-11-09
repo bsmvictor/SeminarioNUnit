@@ -20,18 +20,18 @@ jobs:
 
     - name: Restaurar Dependências
       run: dotnet restore
+
+    - name: Diagnóstico de Testes
+      run: dotnet test ProjetoPilhaTests/ProjetoPilhaTests.csproj --logger "console;verbosity=detailed"
     
     - name: Testes
-      run: dotnet test --logger "trx;LogFileName=test_results.trx" --results-directory ./TestResults
+      run: dotnet test ProjetoPilhaTests/ProjetoPilhaTests.csproj --logger "trx;LogFileName=test_results.trx" --results-directory ./ProjetoPilhaTests/TestResults
       
-    - name: List Test Results Directory
-      run: ls -R ./TestResults
-
     - name: Mostrar Resultados
       uses: actions/upload-artifact@v3
       with:
         name: test-results
-        path: ./TestResults/test_results.trx
+        path: ./ProjetoPilhaTests/TestResults/test_results.trx
 
   build:
     runs-on: ubuntu-latest
