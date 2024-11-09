@@ -61,12 +61,11 @@ public class PilhaTests
         Assert.That(ex.Message, Is.EqualTo("A pilha está vazia."));
     }
 
-    /// Verifica se o método Peek lança uma exceção quando a pilha está vazia.
     [Test]
     public void TestPeekOnEmptyStackThrowsException()
     {
         var ex = Assert.Throws<InvalidOperationException>(() => pilha.Peek());
-        Assert.That(ex.Message, Is.EqualTo("A pilha está vazia."));
+        Assert.That(ex.Message, Is.EqualTo("A pilha está vazia :(."));
     }
 
     /// Testa se a propriedade Count atualiza corretamente após operações de Push e Pop
