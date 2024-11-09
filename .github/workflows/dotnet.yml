@@ -25,7 +25,7 @@ jobs:
       run: dotnet test --logger "trx;LogFileName=test_results.trx" --results-directory ./TestResults
       
     - name: Mostrar Resultados
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: test-results
         path: ./TestResults/test_results.trx
