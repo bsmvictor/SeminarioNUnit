@@ -26,12 +26,24 @@ jobs:
 
     - name: Listar Conteúdo do Diretório de Resultados
       run: ls -R ./ProjetoPilhaTests/TestResults
-      
+
     - name: Mostrar Resultados
       uses: actions/upload-artifact@v3
       with:
         name: test-results
         path: ./ProjetoPilhaTests/TestResults/test_results.trx
+
+    - name: Instalar ReportGenerator
+      run: dotnet tool install -g dotnet-reportgenerator-globaltool
+
+    - name: Converter TRX para HTML
+      run: reportgenerator "-reports:./ProjetoPilhaTests/TestResults/test_results.trx" "-targetdir:./ProjetoPilhaTests/TestResults/HTML" -reporttypes:Html
+
+    - name: Upload do Relatório HTML
+      uses: actions/upload-artifact@v3
+      with:
+        name: html-report
+        path: ./ProjetoPilhaTests/TestResults/HTML
 
   build:
     runs-on: ubuntu-latest
