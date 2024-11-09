@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\victo\\Documents\\SeminárioC214\\Pilha\\Pilha.csproj": {}
+    "C:\\Users\\peaga\\Desktop\\SeminarioNUnit\\Pilha\\Pilha.csproj": {}
   },
   "projects": {
-    "C:\\Users\\victo\\Documents\\SeminárioC214\\Pilha\\Pilha.csproj": {
+    "C:\\Users\\peaga\\Desktop\\SeminarioNUnit\\Pilha\\Pilha.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\victo\\Documents\\SeminárioC214\\Pilha\\Pilha.csproj",
+        "projectUniqueName": "C:\\Users\\peaga\\Desktop\\SeminarioNUnit\\Pilha\\Pilha.csproj",
         "projectName": "Pilha",
-        "projectPath": "C:\\Users\\victo\\Documents\\SeminárioC214\\Pilha\\Pilha.csproj",
-        "packagesPath": "C:\\Users\\victo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\victo\\Documents\\SeminárioC214\\Pilha\\obj\\",
+        "projectPath": "C:\\Users\\peaga\\Desktop\\SeminarioNUnit\\Pilha\\Pilha.csproj",
+        "packagesPath": "C:\\Users\\peaga\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\peaga\\Desktop\\SeminarioNUnit\\Pilha\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\victo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\peaga\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -65,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
