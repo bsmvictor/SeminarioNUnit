@@ -18,14 +18,14 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    - name: Restaurar Dependencias
+    - name: Restaurar Dependências
       run: dotnet restore
     
     - name: Testes
       run: dotnet test --logger "trx;LogFileName=test_results.trx" --results-directory ./TestResults
       
     - name: Mostrar Resultados
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v2
       with:
         name: test-results
         path: ./TestResults/test_results.trx
@@ -44,7 +44,7 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    - name: Restaurar Dependencias
+    - name: Restaurar Dependências
       run: dotnet restore
     
     - name: Build
