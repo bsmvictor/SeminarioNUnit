@@ -28,7 +28,7 @@ jobs:
       run: ls -R ./ProjetoPilhaTests/TestResults
 
     - name: Mostrar Resultados
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: test-results
         path: ./ProjetoPilhaTests/TestResults/test_results.trx
@@ -40,7 +40,7 @@ jobs:
       run: reportgenerator "-reports:./ProjetoPilhaTests/TestResults/test_results.trx" "-targetdir:./ProjetoPilhaTests/TestResults/HTML" -reporttypes:Html
 
     - name: Upload do Relatório HTML
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: html-report
         path: ./ProjetoPilhaTests/TestResults/HTML
