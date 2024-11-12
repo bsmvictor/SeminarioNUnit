@@ -176,6 +176,21 @@ public class PilhaTests
 
         Assert.That(pilha.Count, Is.EqualTo(maxCapacity));
     }
+    
+    [TestCase(1, 1)] 
+    [TestCase(5, 5)]  
+    [TestCase(10, 10)] 
+    public void TestPushPop(int valorPush, int valorPop)
+    {
+        
+        pilha.Push(valorPush);
+
+        Assert.That(pilha.Peek(), Is.EqualTo(valorPush));
+
+        var resultadoPop = pilha.Pop();
+
+        Assert.That(resultadoPop, Is.EqualTo(valorPop));
+    }
 
 
     public class TestClass
