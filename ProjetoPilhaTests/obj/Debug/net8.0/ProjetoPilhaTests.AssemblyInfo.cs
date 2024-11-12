@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjetoPilhaTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d60c9f9b87c8360c20af6844039512d8776a5548")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+187c6aaecb7051184a2d5cafa74ff30fbc2635c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProjetoPilhaTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjetoPilhaTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
