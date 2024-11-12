@@ -54,7 +54,7 @@ public class PilhaTests
     public void TestPopOnEmptyStackThrowsException()
     {
         var ex = Assert.Throws<InvalidOperationException>(() => pilha.Pop());
-        Assert.That(ex.Message, Is.EqualTo("A pilha está vazia. :)"));
+        Assert.That(ex.Message, Is.EqualTo("A pilha está vazia."));
     }
 
     [Test]
