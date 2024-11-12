@@ -12,7 +12,6 @@ public class PilhaTests
         pilha = new Pilha<int>();
     }
 
-    /// Verifica se o método Push adiciona um item corretamente no topo da pilha.
     [Test]
     public void TestPush()
     {
@@ -20,7 +19,6 @@ public class PilhaTests
         Assert.That(pilha.Peek(), Is.EqualTo(1));
     }
 
-    /// Verifica se o método Pop remove e retorna o item do topo da pilha corretamente.
     [Test]
     public void TestPop()
     {
@@ -29,7 +27,6 @@ public class PilhaTests
         Assert.That(result, Is.EqualTo(1));
     }
 
-    /// Testa a adição e remoção de múltiplos itens, garantindo que eles saem na ordem inversa da inserção.
     [Test]
     public void TestPushAndPopMultipleItems()
     {
@@ -42,7 +39,6 @@ public class PilhaTests
         Assert.That(pilha.Pop(), Is.EqualTo(1));
     }
 
-    /// Verifica se o método Peek retorna o item do topo sem removê-lo da pilha.
     [Test]
     public void TestPeekReturnsLastPushedItemWithoutRemoving()
     {
@@ -51,10 +47,9 @@ public class PilhaTests
 
         int topItem = pilha.Peek();
         Assert.That(topItem, Is.EqualTo(2));
-        Assert.That(pilha.Count, Is.EqualTo(2)); // Verifica que o item não foi removido
+        Assert.That(pilha.Count, Is.EqualTo(2));
     }
 
-    /// Garante que o método Pop lança uma exceção quando a pilha está vazia.
     [Test]
     public void TestPopOnEmptyStackThrowsException()
     {
@@ -68,12 +63,10 @@ public class PilhaTests
         var ex = Assert.Throws<InvalidOperationException>(() => pilha.Peek());
         Assert.That(ex.Message, Is.EqualTo("A pilha está vazia."));
     }
-
-    /// Testa se a propriedade Count atualiza corretamente após operações de Push e Pop
     [Test]
     public void TestCountAfterPushAndPop()
     {
-        Assert.That(pilha.Count, Is.EqualTo(0)); // Pilha vazia inicialmente
+        Assert.That(pilha.Count, Is.EqualTo(0));
 
         pilha.Push(1);
         Assert.That(pilha.Count, Is.EqualTo(1));
@@ -88,7 +81,6 @@ public class PilhaTests
         Assert.That(pilha.Count, Is.EqualTo(0));
     }
 
-    /// Testa a adição de múltiplos itens do mesmo valor
     [Test]
     public void TestPushMultipleItemsWithSameValue()
     {
@@ -102,7 +94,6 @@ public class PilhaTests
         Assert.That(pilha.Count, Is.EqualTo(0));
     }
 
-    /// Testa o comportamento da pilha com tipos de dados diferentes
     [Test]
     public void TestStackWithDifferentDataTypes()
     {
@@ -114,23 +105,21 @@ public class PilhaTests
         Assert.That(stringPilha.Pop(), Is.EqualTo("Hello"));
     }
 
-    /// Testa se a pilha permanece consistente após várias operações intercaladas de Push e Pop
     [Test]
     public void TestStackConsistencyAfterMultiplePushAndPop()
     {
         pilha.Push(1);
         pilha.Push(2);
-        pilha.Pop();      // Remove 2
+        pilha.Pop();
         pilha.Push(3);
         pilha.Push(4);
-        pilha.Pop();      // Remove 4
+        pilha.Pop();
 
         Assert.That(pilha.Pop(), Is.EqualTo(3));
         Assert.That(pilha.Pop(), Is.EqualTo(1));
         Assert.That(pilha.Count, Is.EqualTo(0));
     }
 
-    /// Testa a consistência do estado da pilha quando inserido e removido um grande número de itens
     [Test]
     public void TestStackWithLargeNumberOfItems()
     {
@@ -149,7 +138,6 @@ public class PilhaTests
         Assert.That(pilha.Count, Is.EqualTo(0));
     }
 
-    /// Testa o comportamento do Pop com itens complexos (objetos)
     [Test]
     public void TestStackWithComplexObjects()
     {
@@ -164,7 +152,6 @@ public class PilhaTests
         Assert.That(objectPilha.Pop().Id, Is.EqualTo(1));
     }
 
-    /// Testa o comportamento do Peek com objetos sem removê-los
     [Test]
     public void TestPeekWithComplexObjects()
     {
@@ -173,10 +160,24 @@ public class PilhaTests
 
         objectPilha.Push(obj);
         Assert.That(objectPilha.Peek().Id, Is.EqualTo(1));
-        Assert.That(objectPilha.Count, Is.EqualTo(1));  // Garante que o item não foi removido
+        Assert.That(objectPilha.Count, Is.EqualTo(1));
+
     }
 
-    /// Classe de teste auxiliar
+    [Test]
+    public void TestCapacityWithSingleAssert()
+    {
+        const int maxCapacity = 100_000;
+
+        for (int i = 0; i < maxCapacity; i++)
+        {
+            pilha.Push(i);
+        }
+
+        Assert.That(pilha.Count, Is.EqualTo(maxCapacity));
+    }
+
+
     public class TestClass
     {
         public int Id { get; set; }
