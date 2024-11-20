@@ -19,10 +19,10 @@ Este é um projeto de exemplo para demonstrar o uso do framework de testes unit�
 
 1. Clone este repositório:
 ```
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/bsmvictor/SeminarioNUnit/tree/main
  ```
  ```
- cd seu-repositorio
+ cd SeminarioNUnit
  ```
 
 2. Instale as dependências do projeto:
